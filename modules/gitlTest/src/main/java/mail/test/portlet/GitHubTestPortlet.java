@@ -5,8 +5,13 @@ import mail.test.constants.GitHubTestPortletKeys;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
 import javax.portlet.Portlet;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
+
+import java.io.IOException;
 
 /**
  * @author david
@@ -25,4 +30,9 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class GitHubTestPortlet extends MVCPortlet {
+
+	@Override
+	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
+		super.doView(renderRequest, renderResponse);
+	}
 }
